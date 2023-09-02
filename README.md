@@ -36,9 +36,10 @@ php artisan tinker
 
 Затем, , после получения приглашения, выполняем:
 
-App\Models\Post::factory()->count(50)->create();
+App\Models\User::factory()->count(50)->create();
 
-npm run build или vite build
+npm run build 
+vite или vite build
 
 чтобы сайт корректно отображался, возможно придется настроить редирект с основного локального домена на папку /public local-domain --> /local-domain/public Это возможно сделать в настройках вашего сервера или в файле .htacces
 
