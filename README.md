@@ -29,9 +29,13 @@ composer install
 php artisan key:generate
 
 php artisan storage:link
+
 php artisan migrate
+
 php artisan tinker
+
 Затем, , после получения приглашения, выполняем:
+
 App\Models\Post::factory()->count(50)->create();
 
 npm run build или vite build
