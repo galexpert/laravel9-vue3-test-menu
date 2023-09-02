@@ -1,9 +1,4 @@
 import {createRouter, createWebHistory} from "vue-router";
-//import Container from "../views/layouts/Container.vue";
-//import Dashboard from "../views/Pages/Dashboard.vue";
-//import UserProfile from "../views/Pages/UserProfile.vue";
-
-import store from "../store";
 
 import DashboardAdmin from "../views/layouts/DashboardAdmin.vue";
 import UsersPermissions from "../views/layouts/UsersPermissions.vue";
@@ -32,17 +27,6 @@ const routes = [
         component: UsersManagement
     },
 
-  /*  {
-        path: '/tags/:id',
-        name: 'tags',
-        component: ArticleComponent
-    },*/
-/*    {
-        path: '/admin',
-        name: HomeAdmin,
-        component: HomeAdmin
-    },*/
-
 
 ]
 console.log('routes', routes)
@@ -51,6 +35,5 @@ const router = createRouter({
     // createWebHistory убирает # из ссылок
     routes, history: createWebHistory(import.meta.env.APP_URL),
 })
-
 
 export default router

@@ -79,15 +79,12 @@ export default {
 
         },
         paginateItemsData() {
-            //let paginateData = toRaw(this.$store.getters['items/getterPaginateItems'])
             let paginateData = this.$store.getters['users/getterPaginateItems']
-            console.log('users111',paginateData)
             if (paginateData.data) {
-                // this.busy = false
                 return paginateData
             }
             let users = this.$store.getters["users/getUsers"]
-            console.log('users222222',this.$store.getters["users/getUsers"].data)
+
             return users
         },
 
@@ -100,12 +97,6 @@ export default {
 
             this.$store.dispatch('users/paginationItems', {url, page, params, sorting})
         },
-        deleteUser(id){
-            this.isPopUpVisible = false
-            //console.log('delete',id)
-            this.$store.dispatch('users/deleteUser', id)
-
-        },
         getUsers(){
             /*axios.get('/api/users')
                 .then(response => {
@@ -116,18 +107,6 @@ export default {
             })*/
             this.$store.dispatch('users/getUsersAll')
         },
-
-        getInitUsers(){
-            axios.get('/api/users')
-                .then(response => {
-                    console.log('MainAdmin' , response.data)
-                    this.users = response.data.data
-                }).catch(error => {
-                console.log('getData' , error)
-            })
-            this.$store.dispatch('users/getUsersAll')
-        },
-
 
     },
 

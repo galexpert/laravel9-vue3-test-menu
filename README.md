@@ -1,66 +1,110 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+скачиваем проект с ветки master
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+$ git clone https://github.com/galexpert/test-service-np.git <имя_папки>
 
-## About Laravel
+создаем и подключаем БД на лкальном сервере
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+в файле локальном .env необходимо установить настройки
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+APP_KEY=<сгенерировать свой ключ приложения>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+APP_URL=<локальный адрес>
+ 
 
-## Learning Laravel
+DB_DATABASE=<локальная база данных>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+стартуем работу локального сервера...
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+далее в консоли выполняем такие действия
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+устанавливаем все зависимости
 
-## Laravel Sponsors
+npm install
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+composer install
 
-### Premium Partners
+необходимо выполнить команды:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+php artisan key:generate
 
-## Contributing
+php artisan storage:link
+php artisan migrate
+php artisan tinker
+Затем, , после получения приглашения, выполняем:
+App\Models\Post::factory()->count(50)->create();
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+npm run build или vite build
 
-## Code of Conduct
+чтобы сайт корректно отображался, возможно придется настроить редирект с основного локального домена на папку /public local-domain --> /local-domain/public Это возможно сделать в настройках вашего сервера или в файле .htacces
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+рабочая тестовая страница должна открываться локальному домену вашего проекта (.env APP_URL=) напр http://localhost
 
-## Security Vulnerabilities
+задача выполена с исползованием такого стека
+php 8.1
+Laravel 9
+Vite
+Vue 3
+Vuex
+Vue-router
+Bootstrap 5
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
+*************************************ТЗ Описание Задачи************************
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Test Task: PHP/Vue Middle Developer
+
+Technologies:
+vue 2
+vuex
+typescript
+
+php 8.1
+laravel 8
+
+
+Job Description:
+As a PHP/Vue Junior/Middle Developer, your task is to create a web page with a side menu containing three clickable buttons and a non-clickable logo. Each button will navigate to a different page, and on each page, there will be three tables with different names but potentially containing the same content. Additionally, one of the pages should include pagination functionality.
+
+Expectations:
+1.	Use PHP and Vue.js to implement the web page.
+2.	Ensure the side menu remains fixed and visible on all pages.
+3.	The logo should be non-clickable.
+4.	Each button should navigate to a different page without reloading the entire page.
+5.	The tables should have different names and may contain the same content.
+6.	Implement pagination on one of the pages to display a limited number of table entries per page.
+7.	Apply appropriate styling to make the page visually appealing and responsive.
+8.	Maintain clean and organized code structure.
+9.	Use proper error handling and validation where necessary.
+10.	Ensure the final solution is cross-browser compatible and works well on major modern browsers.
+Submission Details:
+Please provide the following information upon submission of the test task:
+1.	A detailed text description of your approach and any assumptions made during development.
+2.	A published link where we can view and test the web page.
+3.	The total time it took for you to complete the task.
+Note: Feel free to use any additional libraries or frameworks as necessary to accomplish the task.
+Best of luck with the test task! We look forward to reviewing your submission.
+
+
+As a PHP/Vue Junior/Middle Developer, your task is to create a web page with a side menu containing three clickable buttons and a non-clickable logo. Each button will navigate to a different page, and on each page, there will be three tables with different names but potentially containing the same content. Additionally, one of the pages should include pagination functionality.
+
+Expectations:
+1.	Use PHP and Vue.js to implement the web page.
+2.	Ensure the side menu remains fixed and visible on all pages.
+3.	The logo should be non-clickable.
+4.	Each button should navigate to a different page without reloading the entire page.
+5.	The tables should have different names and may contain the same content.
+6.	Implement pagination on one of the pages to display a limited number of table entries per page.
+7.	Apply appropriate styling to make the page visually appealing and responsive.
+8.	Maintain clean and organized code structure.
+9.	Use proper error handling and validation where necessary.
+10.	Ensure the final solution is cross-browser compatible and works well on major modern browsers.
+Submission Details:
+Please provide the following information upon submission of the test task:
+1.	A detailed text description of your approach and any assumptions made during development.
+2.	A published link where we can view and test the web page.
+3.	The total time it took for you to complete the task.
+Note: Feel free to use any additional libraries or frameworks as necessary to accomplish the task.
+Best of luck with the test task! We look forward to reviewing your submission.
+
+
+
