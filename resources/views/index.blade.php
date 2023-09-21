@@ -9,9 +9,6 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
-    <!-- Scripts -->
-    <!--'resources/sass/app.scss'-->
 </head>
 <body>
 <div>
@@ -108,8 +105,6 @@
                                     <a href="https://laravel.bigcartel.com" class="ml-1 underline">
                                         Shop
                                     </a>
-
-
                                 </div>
                             </div>
 
@@ -124,7 +119,6 @@
         </div>
     </main>
 </div>
-{{-- resources/css/app.css --}}
 @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </body>
 </html>

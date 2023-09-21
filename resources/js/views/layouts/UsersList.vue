@@ -1,9 +1,6 @@
 <template>
     <main class="main-part">
 
-
-      <!--  Test: {{ users }}-->
-
         <table class="table">
             <thead>
             <tr>
@@ -24,7 +21,6 @@
             </tr>
             </tbody>
         </table>
-
         <div class="page-pagination">
             <nav aria-label="Pagination">
                 <Bootstrap5Pagination class="mt-1 " v-if="paginateItemsData"
@@ -35,12 +31,10 @@
                 ></Bootstrap5Pagination>
             </nav>
         </div>
-
     </main>
 </template>
 
 <script>
-    import axios from 'axios';
     import {Bootstrap5Pagination} from 'laravel-vue-pagination';
 
 export default {
@@ -53,12 +47,6 @@ export default {
             user: {},
             itemsdata: {}
         }
-
-    },
-    created(){
-       // this.getUsers()
-
-
     },
     mounted(){
       this.getUsers()
@@ -69,13 +57,10 @@ export default {
             return this.$store.state
         },
         users(){
-
             let users = this.$store.getters["users/getUsers"]
             if(users.data){
                 return users.data
             }
-
-
 
         },
         paginateItemsData() {
@@ -94,17 +79,9 @@ export default {
             let url = window.location.pathname
             let params = this.getFilterParams
             let sorting = this.getSortingParams
-
             this.$store.dispatch('users/paginationItems', {url, page, params, sorting})
         },
         getUsers(){
-            /*axios.get('/api/users')
-                .then(response => {
-                    console.log('MainAdmin' , response.data)
-                    this.users = response.data.data
-                }).catch(error => {
-                console.log('getData' , error)
-            })*/
             this.$store.dispatch('users/getUsersAll')
         },
 
@@ -117,7 +94,6 @@ export default {
 .main-part {
     color: cornsilk;
     background-color:   #ddd;
-   /* height: 73rem;*/
     flex: 1;
 }
 </style>

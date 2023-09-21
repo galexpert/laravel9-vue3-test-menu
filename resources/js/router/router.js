@@ -29,7 +29,7 @@ const routes = [
 
 
 ]
-console.log('routes', routes)
+
 // создаем роутер
 const router = createRouter({
     // createWebHistory убирает # из ссылок
